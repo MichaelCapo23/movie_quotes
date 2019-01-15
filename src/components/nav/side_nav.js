@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 class SideNav extends Component {
 
     componentDidMount() {
-        console.log("side nav ref", this.navRef);
         M.Sidenav.init(this.navRef);
     }
 

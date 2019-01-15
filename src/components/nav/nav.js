@@ -31,8 +31,8 @@ class Nav extends Component {
         ],
         AuthLinks: [
             {
-                text: "Secret Movie List",
-                to: "/secret-movie-list"
+                text: "Private Movie List",
+                to: "/movie-list/private"
             },
             {
                 text: "Movie Quotes",
@@ -61,7 +61,7 @@ class Nav extends Component {
         if (auth) {
             links = [...links, ...AuthLinks].map(this.buildLink);
             links.push(
-                <li key={"sign-out"}>
+                <li key={"sign-out"} className={"sign-out"}>
                     <button onClick={this.handleSignOut} className={"btn blue"}>Sign Out</button>
                 </li>
             )
