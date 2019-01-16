@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Auth from '../hoc/auth'
 import {connect} from 'react-redux'
 import axios from 'axios';
 
@@ -14,4 +13,4 @@ class MovieQuote extends Component {
     }
 }
 
-export default Auth(MovieQuote);
+export default MovieQuote;
