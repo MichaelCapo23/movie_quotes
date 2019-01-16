@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-export default (WrappedComponent) => { //HOC is a component that is returned form a function.
+export default (WrappedComponent, to = '/sign-in', redirect = false) => { //HOC is a component that is returned form a function.
     class Auth extends Component {
 
         componentDidMount() {
@@ -10,14 +10,14 @@ export default (WrappedComponent) => { //HOC is a component that is returned for
 
         componentDidUpdate() {
 
-            console.log('Component Did Update')
+            console.log('Component Did Update');
            this.checkAuth();
         }
 
         checkAuth() {
             const {auth, history} = this.props;
-            if(!auth) {
-                history.push('/sign-in')
+            if(auth === redirect) {
+                history.push(to)
             }
         }
 
